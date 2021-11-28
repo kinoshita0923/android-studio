@@ -15,11 +15,10 @@
  */
 package com.example.lemonade
 
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.ImageView
 import android.widget.TextView
-import android.widget.Toast
+import androidx.appcompat.app.AppCompatActivity
 import com.google.android.material.snackbar.Snackbar
 
 class MainActivity : AppCompatActivity() {
@@ -33,18 +32,25 @@ class MainActivity : AppCompatActivity() {
     private val LEMONADE_STATE = "LEMONADE_STATE"
     private val LEMON_SIZE = "LEMON_SIZE"
     private val SQUEEZE_COUNT = "SQUEEZE_COUNT"
+
     // SELECT represents the "pick lemon" state
     private val SELECT = "select"
+
     // SQUEEZE represents the "squeeze lemon" state
     private val SQUEEZE = "squeeze"
+
     // DRINK represents the "drink lemonade" state
     private val DRINK = "drink"
+
     // RESTART represents the state where the lemonade has be drunk and the glass is empty
     private val RESTART = "restart"
+
     // Default the state to select
     private var lemonadeState = "select"
+
     // Default lemonSize to -1
     private var lemonSize = -1
+
     // Default the squeezeCount to -1
     private var squeezeCount = -1
 
@@ -126,19 +132,19 @@ class MainActivity : AppCompatActivity() {
         when (lemonadeState) {
             SELECT -> {
                 textAction.contentDescription = "Click to select a lemon!"
-//                lemonImage.setImageResource(R.drawable.lemon_tree)
+                lemonImage?.setImageResource(R.drawable.lemon_tree)
             }
             SQUEEZE -> {
                 textAction.contentDescription = "Click to juice the lemon!"
-//                lemonImage.setImageResource(R.drawable.lemon_squeeze)
+                lemonImage?.setImageResource(R.drawable.lemon_squeeze)
             }
             DRINK -> {
                 textAction.contentDescription = "Click to drink your lemonade!"
-//                lemonImage.setImageResource(R.drawable.lemon_drink)
+                lemonImage?.setImageResource(R.drawable.lemon_drink)
             }
             RESTART -> {
                 textAction.contentDescription = "Click to start again!"
-//                lemonImage.setImageResource(R.drawable.lemon_restart)
+                lemonImage?.setImageResource(R.drawable.lemon_restart)
             }
         }
     }
